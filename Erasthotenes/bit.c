@@ -4,7 +4,7 @@
 
 struct Sieve
 {
-    char *listNumbers;
+    int *listNumbers;
     int N;
 };
 
@@ -14,11 +14,11 @@ int TestBit(int *bits, int k);
 Sieve *sieve_initialize(int N)
 {
     Sieve *sieve = (Sieve *)malloc(sizeof(Sieve));
-    sieve->listNumbers = (char *)malloc((N + 1) * sizeof(char));
+    sieve->listNumbers = (int *)malloc(((N % 32)) * sizeof(int));
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < N % 32; i++)
     {
-        sieve->listNumbers[i] = 'n';
+        sieve->listNumbers[i] = 0;
     }
 
     sieve->N = N;
@@ -30,14 +30,11 @@ void sieve_mark_list(Sieve *sieve)
 {
     for (int i = 2; i <= sieve->N; i++)
     {
-        if (sieve->listNumbers[i] != 's')
+        if (!TestBit(sieve->listNumbers, i))
         {
-            for (int j = i * i; j <= sieve->N; j += i)
+            for (int j = i + i; j <= sieve->N; j += i)
             {
-                if (j > 0)
-                {
-                    sieve->listNumbers[j] = 's';
-                }
+                SetBit(sieve->listNumbers, j);
             }
         }
     }
@@ -47,7 +44,7 @@ void sieve_print_primes(Sieve *sieve)
 {
     for (int i = 2; i <= sieve->N; i++)
     {
-        if (sieve->listNumbers[i] != 's')
+        if (!TestBit(sieve->listNumbers, i))
         {
             printf("%d ", i);
         }

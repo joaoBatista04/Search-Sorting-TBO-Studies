@@ -1,0 +1,23 @@
+1. Percorrer o vetor para alcoar memória, marcação da lista ao percorrer o vetor várias vezes, percorrer o vetor para imprimir os números primos e percorrer o vetor para liberar a memória alocada.
+
+2. Feito com integer.c (mudar no Makefile)
+
+3. A priori, pensando em um algoritmo inicial, pensa-se em utilizar a estrutura de dados vetor. Porém, como é preciso percorrer o vetor para marcar itens em grupos (primos e não primos), pode-se utilizar a estrutura Union-Find e suas variações. Para fins de teste, a escolha feita foi o vetor, a princípio.
+
+4. Trocar no Makefile pelos arquivos correspondentes.
+
+5.
+Memory consumption in bytes for N = 100_000:
+sieve_int   401,044
+sieve_bool	101,040
+sieve_bit   1,040
+
+6.
+Running time (in sec.) vs. array type
+
+N	    10^3	10^4	10^5	10^6	10^7	10^8	10^9	10^10
+int	    0.003s  0.003s  0.143s  0.384s  0.928s  5.334s  -       -
+char    0.003s	0.004s  0.126s  0.380s  0.948s  5.508s  -       -
+bit     0.003s  0.002s  0.006s  0.022s  -       -       -       -
+
+7. Tempo de execução O(N^2)

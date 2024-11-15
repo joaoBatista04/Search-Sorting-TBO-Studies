@@ -1,7 +1,7 @@
 FLAGS = -Wall -Wno-unused-result
 
-DEPS = sieve.h
-OBJ = bit.c main.c #TROCAR O NOME PARA O TIPO QUE SE DESEJA REALIZAR
+DEPS = list.h josephus.h
+OBJ = list.c josephus.c main.c
 
 %.o: %.c $(DEPS)
 	gcc -g -c -o $@ $< $(FLAGS)

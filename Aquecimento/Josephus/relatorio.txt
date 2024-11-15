@@ -1,0 +1,20 @@
+1. Inicialização da lista de pessoas e percorrer a lista retirando as pessoas conforme circulação do algoritmo.
+
+2. make run
+
+3. No caso, é mais fácil utilizar uma lista encadeada, pois é mais barato retirar elementos em um índice específico do que em um vetor, que precisa que todos os itens sejam movidos após uma retirada.
+
+4. Sim. No caso, não se representa as pessoas em uma lista, mas em uma simples conta que envolve soma e resto de divisão. (josephus_leader_faster)
+
+5.
+Josephus com lista (N = 10000 e M = 50) 242,056 bytes
+Josephus sem lista (N = 10000 e M = 50) 2,048 bytes
+
+6.
+Running time (in sec.)
+M = 10
+N	            10^3	10^4	10^5	10^6	10^7	10^8	10^9
+Com Lista	    0.003s  0.061s  6.099s  -       -       -       -   
+Sem Lista       0.002s	0.002s  0.003s  0.007s  0.047s  0.409s  4.079s   
+
+7. Na primeira implementação, com lista, a complexidade do tempo de execução torna-se O(N^2), enquanto a complexidade do tempo de execução sem a lista é de N.
