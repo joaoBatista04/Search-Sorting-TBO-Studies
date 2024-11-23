@@ -1,0 +1,7 @@
+Resultados de tempo de execução (em segundos) para os algoritmos de caminhamento
+(versões recursivas e não-recursivas) para N = 10^7.
+
+Type        Rec         Iter
+Pre-order   1.149537    1.125477
+In-order    1.186208    2.390708
+Post-order  1.034002    3.097419

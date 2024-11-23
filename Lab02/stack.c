@@ -4,6 +4,7 @@
 #include "list.h"
 #include "stack.h"
 
+#define MAX_STACK_SIZE 10000000
 struct stack
 {
     BST **vector;
@@ -14,7 +15,7 @@ Stack *stack_create()
 {
     Stack *stack = (Stack *)malloc(sizeof(Stack));
 
-    stack->vector = (BST **)malloc(10000000 * sizeof(BST *));
+    stack->vector = (BST **)malloc(MAX_STACK_SIZE * sizeof(BST *));
     stack->size = 0;
 
     return stack;

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "queue.h"
 
+#define MAX_QUEUE_SIZE 10000000
+
 struct queue
 {
     BST **vector;
@@ -12,7 +14,7 @@ Queue *queue_create()
 {
     Queue *queue = (Queue *)malloc(sizeof(Queue));
 
-    queue->vector = (BST **)malloc(10000000 * sizeof(BST *));
+    queue->vector = (BST **)malloc(MAX_QUEUE_SIZE * sizeof(BST *));
     queue->size = 0;
 
     return queue;

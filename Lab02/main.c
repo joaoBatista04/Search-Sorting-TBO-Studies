@@ -64,6 +64,10 @@ int main()
     clock_t end_ipost = clock();
     printf("\n");
 
+    printf("LEVEL ORDER ITERATIVE: (ENABLE PRINT BY REMOVING COMMENTS IN BST.C)");
+    levelorder_iterative(root);
+    printf("\n");
+
     printf("\nTIME TABLE:\n");
 
     printf("PRE ORDER RECURSIVE: ");
@@ -83,10 +87,6 @@ int main()
 
     printf("POST ORDER ITERATIVE: ");
     print_time(start_ipost, end_ipost);
-
-    printf("\nLEVEL ORDER ITERATIVE: (ENABLE PRINT BY REMOVING COMMENTS IN BST.C)");
-    levelorder_iterative(root);
-    printf("\n");
 
     bst_destroy(root);
 
